@@ -30,7 +30,7 @@ jobs:
         script: |
           sudo pm2 delete appgoo || echo "No existing process found"
           cd test-go
-          git push origin test
+          git pull origin test
           sudo pm2 start go --name "appgoo" -- run main.go
           sudo pm2 save
           echo "Application is running in the background."
